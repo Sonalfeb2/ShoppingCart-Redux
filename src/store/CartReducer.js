@@ -10,11 +10,16 @@ const CartSlices = createSlice({
     reducers:{
         cartHandler : (state)=>{state.showCart = !state.showCart},
         showNotification :(state, action)=>{
+            if(action.payload==null){
+                state.notification = null;
+            }
+            else{
             state.notification= {
                 status :action.payload.status,
                 message: action.payload.message,
                 title: action.payload.title,
             }
+        }
 
         }
     }

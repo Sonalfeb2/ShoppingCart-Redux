@@ -55,6 +55,9 @@ export const sendData = cart => {
           message: "Cart Data Sent"
         })
       );
+      setTimeout(()=>{
+        dispatch(CartSlicesAction.showNotification(null))
+      },3000)
     } catch (error) {
       dispatch(
         CartSlicesAction.showNotification({
